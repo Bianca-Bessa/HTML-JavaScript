@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    
+    <form id="content" name="formuser" onsubmit="debug(event)">
+        <table class="tabela">
+                        
+            <tr>
+                <td><h1>Formulário</h1></td>
+            </tr>
+
+            <tr>
+                <td class="ind">Nome:</td> 
+                <td id="nome" class="ind"><input type="text" name="nome"></td> 
+            </tr><br>
+
+            <tr>
+                <td class="ind">Pontos:</td>
+                <td id="pontos" class="ind"><input type="number" name="pontos"></td>
+            </tr><br>
+
+            <tr>
+                <td class="ind">Nota:</td>
+                <td id="nota" class="ind"><input type="number" name="nota"></td> 
+            </tr><br>
+
+            <tr>
+                <td class="ind">Universidade:</td>
+                <td id="universidade" class="ind"><input type="text" name="universidade"></td>
+            </tr><br>
+
+            <tr>
+                <td class="ind">Empresa:</td>
+                <td id="empresa" class="ind"><input type="text" name="empresa"></td>
+            </tr><br>
+
+            <tr>
+                <td class="ind">Avatars:</td>
+                <td><select name="imagem" id="imagem">
+                    <option value="#">Selecione</option>
+                    <option id="avatar" value="https://i.pinimg.com/originals/0d/9f/21/0d9f21749c3664a68a89bba5ecfc27b1.jpg">Masculino</option>
+                    <option id="avatar" value="https://i.pinimg.com/originals/a4/2d/cb/a42dcbc9245c9ac6d9047c26693783f6.png">Feminino</option>
+                </select></td>
+            </tr><br>
+
+            <tr>
+                <td class="ind">Horário:</td>
+                <td id="horario" class="ind"><input type="date" name="horario"></td>
+            </tr>
+
+            <tr>
+                <td><button type="submit" value="submit" class="btn btn-outline-danger" onclick="return validar()">Enviar</button></td>
+            </tr>
+
+        </table>
+    </form>
+
+    <footer></footer>
+    <script type="text/javascript" src="formulario.js"></script>
+
+</body>
+</html>

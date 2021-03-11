@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="content" name="formuser" method="POST">
+        <table class="tabela">            
+            <tr>
+                <td class="ind">E-mail:</td> 
+                <td id="email" class="email"><input type="email" name="email"></td> 
+            </tr>
+
+            <tr>
+                <td class="ind">Senha:</td> 
+                <td id="senha" class="senha"><input type="password" name="senha"></td> 
+            </tr><br>
+
+            <tr>
+                <td>
+                <div id="demo">
+                    <button type="button" onclick="enviar()">Enviar</button>
+                </div>
+                </td>
+            </tr>
+        </table>
+
+        <p id="res"></p>
+
+    </form>
+
+    <script type="text/javascript" src="formulario.js"></script>
+</body>
+</html>

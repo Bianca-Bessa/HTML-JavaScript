@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="content" name="formuser" method="POST">
+        <table class="tabela">            
+            <tr>
+                <td class="ind">E-mail:</td> 
+                <td id="email" class="ind"><input type="email" name="email"></td> 
+            </tr>
+
+            <tr>
+                <td class="ind">Senha:</td> 
+                <td id="senha" class="ind"><input type="password" name="senha"></td> 
+            </tr><br>
+
+            <tr>
+                <td>
+                <div id="demo">
+                    <button type="button" onclick="enviar()">Enviar</button>
+                </div>
+                </td>
+            </tr>
+        </table>
+
+        <p id="res"></p>
+
+    </form>
+
+    <script>
+        function enviar(){
+            var xhr = new XMLHttpRequest();
+            var url = "http://52.91.139.190/fsapi/users/auth/register-jwt"
+
+            var user = { 
+                "email": "fschorles@teste.com", 
+                "password": "123456" 
+            }
+
+            xhr.onload = function(){
+                if(this.readyState == 4 && this.status == 200){
+                    var res = document.getElementById('res');
+                    var response = JSON.parse(this.responseText);
+                    res.innerHTML += response.user['email'];
+                    console.log(response)
+                }
+            };
+
+            xhr.open("POST", url, true);
+            xhr.Header('Content-Type', 'application/json')
+            xhr.send(JSON.stringify(user));
+        }
+
+    </script>
+</body>
+</html>
